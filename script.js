@@ -39,12 +39,21 @@ if (audio) {
       activeButton = button;
       audio.src = button.closest(".track").dataset.src;
       audio.play().catch(() => {});
+      showToast("Now playing — " + button.dataset.track);
     });
   });
 
   audio.addEventListener("play", syncButtons);
   audio.addEventListener("pause", syncButtons);
-  audio.addEventListener("ended", () => { activeButton = null; syncButtons(); });
+  audio.addEventListener("ended", () => {
+    const current = activeButton?.closest(".track");
+    const next = current?.nextElementSibling;
+    activeButton = null;
+    syncButtons();
+    if (next?.classList.contains("track")) {
+      next.querySelector(".play-button")?.click();
+    }
+  });
 }
 
 const observer = new IntersectionObserver(entries => {
