@@ -1,4 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/barlow-condensed-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/barlow-condensed-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/barlow-condensed-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/dm-sans-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/dm-sans-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/dm-sans-700.woff2") format("woff2");
+}
 
 :root {
   --bg: #17120f;
@@ -70,6 +111,9 @@ button { font: inherit; }
   background: var(--text);
   transition: transform .2s ease, opacity .2s ease;
 }
+.menu-toggle.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 .hero {
   min-height: 100svh;
   position: relative;
@@ -158,7 +202,7 @@ button { font: inherit; }
   padding: 130px clamp(24px, 5vw, 64px);
 }
 .section-label {
-  color: #796c63;
+  color: #9c8d82;
   font-size: 15px;
   letter-spacing: .12em;
   padding-bottom: 22px;
@@ -230,8 +274,43 @@ h2 {
   padding-top: 34px;
   color: var(--muted);
 }
-.streaming-links span { color: #786b61; font-family: "Barlow Condensed", Impact, sans-serif; letter-spacing: .08em; }
+.streaming-links span { color: #9c8d82; font-family: "Barlow Condensed", Impact, sans-serif; letter-spacing: .08em; }
 .streaming-links a:hover { color: var(--orange); }
+
+.film-strip {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+  padding: 62px 0 72px;
+}
+.film-kicker {
+  margin: 0 0 46px;
+  text-align: center;
+  color: var(--orange);
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .14em;
+}
+.film-viewport {
+  overflow-x: auto;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.film-viewport::-webkit-scrollbar { display: none; }
+.film-viewport.dragging { cursor: grabbing; user-select: none; }
+.film-track { display: flex; width: max-content; }
+.film-track img {
+  display: block;
+  height: 320px;
+  width: auto;
+  margin-right: 12px;
+  border-radius: 6px;
+  filter: saturate(.9);
+  transition: filter .3s ease;
+}
+.film-track img:hover { filter: none; }
 
 .tour-note { max-width: 640px; color: var(--muted); font-size: 18px; }
 .tour-note p { margin: 0 0 26px; }
@@ -273,7 +352,33 @@ h2 {
 }
 .footer-brand { display: inline-block; font-size: 42px; }
 .socials { display: flex; justify-content: center; flex-wrap: wrap; gap: 34px; margin: 42px 0; }
-.site-footer p { color: #6f625a; font-size: 13px; }
+.site-footer p { color: #9c8d82; font-size: 13px; }
+.legal-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-bottom: 26px;
+  font-size: 13px;
+  color: #9c8d82;
+}
+.legal-links a:hover { color: var(--orange); }
+
+.legal { padding-top: 170px; padding-bottom: 110px; }
+.legal-content { max-width: 780px; }
+.legal-content h2 { font-size: clamp(48px, 7vw, 84px); margin-bottom: 46px; }
+.legal-content h3 {
+  margin: 40px 0 12px;
+  color: var(--text);
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 23px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.legal-content p, .legal-content li { margin: 0 0 14px; color: var(--muted); font-size: 16px; }
+.legal-content a { color: var(--orange); }
+.legal-content .todo { color: var(--orange); border-bottom: 1px dashed var(--orange); }
+.back-link { margin-left: auto; }
 
 .toast {
   position: fixed;
@@ -325,5 +430,10 @@ h2 {
   .play-button { width: 48px; height: 48px; }
   .track-meta { gap: 15px; }
   .track h3 { font-size: 18px; }
+  .film-track img { height: 210px; }
   .cta-section { min-height: 520px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
