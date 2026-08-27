@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Papaya Ryders — blues, indie and funk. Music, live dates and more.">
+  <meta name="description" content="Papaya Ryders — indie, funk, blues, and rock. Music, live dates and more.">
   <meta name="theme-color" content="#17120f">
-  <title>Papaya Ryders — Blues · Indie · Funk</title>
+  <title>Papaya Ryders — Indie · Funk · Blues · Rock</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
       <div class="hero-image" aria-hidden="true"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="eyebrow">BLUES · INDIE · FUNK</p>
+        <p class="eyebrow"> INDIE · FUNK · BLUES · ROCK </p>
         <h1>PAPAYA<br>RYDERS</h1>
         <p class="hero-copy">Raw grooves. Warm amps. Loud nights.</p>
         <div class="hero-actions">
@@ -48,8 +48,8 @@
           <h2>Six people.<br>One sweaty room.</h2>
         </div>
         <div class="body-copy">
-          <p>Papaya Ryders blend blues grit, indie attitude and funky rhythms into a live sound built for small rooms and big stages.</p>
-          <p>Replace this copy with the band's real story, hometown, lineup and whatever makes Papaya Ryders Papaya Ryders.</p>
+          <p>If you're craving a musical adventure as delightful as a fresh papaya on a summer day, you've found it. Papaya Ryders are a sextet born from the cultural crossroads of Germany, Austria and Italy — and they call their sound "Papayadelic."</p>
+          <p>Founded in Munich, the band weave rock, blues, indie and funk into something uniquely their own: unusual compositions, captivating live shows, and a lineup of drums, bass, electric guitars, saxophone, harmonica and vocals. One moment you're lost in an atmospheric passage; the next, swept up in a whirlwind of rock and funk that gets the whole room moving.</p>
           <a class="text-link" href="#contact">BOOK THE BAND <span>↗</span></a>
         </div>
       </div>
@@ -62,76 +62,100 @@
         <h2>Latest sounds</h2>
       </div>
 
-      <div class="tracks reveal">
-        <article class="track">
-          <button class="play-button" type="button" aria-label="Play track" data-track="Track One">▶</button>
+      <div class="tracks reveal" id="track-list">
+        <article class="track" data-src="tracks/funk-the-duck.mp3">
+          <button class="play-button" type="button" aria-label="Play Funk The Duck" data-track="Funk The Duck">▶</button>
           <div class="track-meta">
             <span class="track-number">01</span>
             <div>
-              <h3>Midnight Driver</h3>
-              <p>Single · 2026</p>
+              <h3>Funk The Duck</h3>
+              <p>Single</p>
             </div>
           </div>
-          <a href="#" class="track-link" aria-label="Open Midnight Driver">↗</a>
+          <a class="track-link" href="https://open.spotify.com/intl-de/artist/6li5xlnYckfpCTUu9VcIGZ?si=tHlqAm4nSLOecpN7BYB3zA" target="_blank" rel="noopener" aria-label="Open Funk The Duck on Spotify">↗</a>
         </article>
-        <article class="track">
-          <button class="play-button" type="button" aria-label="Play track" data-track="Track Two">▶</button>
+        <article class="track" data-src="tracks/smokey-eyes.mp3">
+          <button class="play-button" type="button" aria-label="Play Smokey Eyes" data-track="Smokey Eyes">▶</button>
           <div class="track-meta">
             <span class="track-number">02</span>
             <div>
-              <h3>Orange Lights</h3>
-              <p>Live Session · 2026</p>
+              <h3>Smokey Eyes</h3>
+              <p>Single</p>
             </div>
           </div>
-          <a href="#" class="track-link" aria-label="Open Orange Lights">↗</a>
+          <a class="track-link" href="https://open.spotify.com/intl-de/artist/6li5xlnYckfpCTUu9VcIGZ?si=tHlqAm4nSLOecpN7BYB3zA" target="_blank" rel="noopener" aria-label="Open Smokey Eyes on Spotify">↗</a>
         </article>
-        <article class="track">
-          <button class="play-button" type="button" aria-label="Play track" data-track="Track Three">▶</button>
+        <article class="track" data-src="tracks/sophia.mp3">
+          <button class="play-button" type="button" aria-label="Play Sophia" data-track="Sophia">▶</button>
           <div class="track-meta">
             <span class="track-number">03</span>
             <div>
-              <h3>Keep It Moving</h3>
-              <p>Single · 2025</p>
+              <h3>Sophia</h3>
+              <p>Single</p>
             </div>
           </div>
-          <a href="#" class="track-link" aria-label="Open Keep It Moving">↗</a>
+          <a class="track-link" href="https://open.spotify.com/intl-de/artist/6li5xlnYckfpCTUu9VcIGZ?si=tHlqAm4nSLOecpN7BYB3zA" target="_blank" rel="noopener" aria-label="Open Sophia on Spotify">↗</a>
+        </article>
+        <article class="track" data-src="tracks/volume-shampoo.mp3">
+          <button class="play-button" type="button" aria-label="Play Volume Shampoo" data-track="Volume Shampoo">▶</button>
+          <div class="track-meta">
+            <span class="track-number">04</span>
+            <div>
+              <h3>Volume Shampoo</h3>
+              <p>Single</p>
+            </div>
+          </div>
+          <a class="track-link" href="https://open.spotify.com/intl-de/artist/6li5xlnYckfpCTUu9VcIGZ?si=tHlqAm4nSLOecpN7BYB3zA" target="_blank" rel="noopener" aria-label="Open Volume Shampoo on Spotify">↗</a>
         </article>
       </div>
 
+      <audio id="audio-player" preload="none" controlsList="nodownload"></audio>
+
       <div class="streaming-links reveal">
         <span>LISTEN ON</span>
-        <a href="#">Spotify</a>
-        <a href="#">YouTube</a>
-        <a href="#">Bandcamp</a>
+        <a href="https://open.spotify.com/intl-de/artist/6li5xlnYckfpCTUu9VcIGZ?si=tHlqAm4nSLOecpN7BYB3zA" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://www.youtube.com/channel/UCgodLTPbJRze_vL4EjdujCg" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://music.apple.com/us/artist/papaya-ryders/1745280372" target="_blank" rel="noopener">iTunes</a>
       </div>
     </section>
 
+    <section class="section watch" id="watch">
+      <div class="section-label">03 / WATCH</div>
+      <div class="watch-heading reveal">
+        <p class="kicker">PAPAYADELIC LIVE</p>
+        <h2>Caught live</h2>
+      </div>
+      <div class="video-wrap reveal">
+        <iframe title="Papaya Ryders — live session" src="https://www.youtube-nocookie.com/embed/XggActTpzbE?rel=0" width="100%" height="100%" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="video-fallback reveal"><a class="text-link" href="https://www.youtube.com/watch?v=XggActTpzbE" target="_blank" rel="noopener">Watch on YouTube <span>↗</span></a></p>
+    </section>
+
     <section class="section tour" id="tour">
-      <div class="section-label">03 / TOUR</div>
+      <div class="section-label">04 / TOUR</div>
       <div class="tour-heading reveal">
         <p class="kicker">SEE YOU OUT THERE</p>
         <h2>Live dates</h2>
       </div>
 
-      <div class="dates reveal">
-        <article class="date-row">
-          <div class="date-box"><strong>MAY</strong><span>17</span></div>
-          <div class="venue"><h3>Rough Trade</h3><p>Brooklyn, NY</p></div>
-          <span class="status">FEW LEFT</span>
-          <a class="date-button" href="#">Tickets ↗</a>
-        </article>
-        <article class="date-row">
-          <div class="date-box"><strong>JUN</strong><span>07</span></div>
-          <div class="venue"><h3>The Echo</h3><p>Los Angeles, CA</p></div>
-          <span class="status">ON SALE</span>
-          <a class="date-button" href="#">Tickets ↗</a>
-        </article>
-        <article class="date-row">
-          <div class="date-box"><strong>JUL</strong><span>12</span></div>
-          <div class="venue"><h3>Open Air Festival</h3><p>Berlin, DE</p></div>
-          <span class="status sold-out">SOLD OUT</span>
-          <a class="date-button disabled" href="#" aria-disabled="true">Sold Out</a>
-        </article>
+      <div class="tour-note reveal">
+        <p>No shows on the calendar right now — but Papaya Ryders hit the stage around ten times a year, mostly in intimate rooms around Munich and beyond. New dates are announced on Instagram first, so the best way not to miss one is to follow along there.</p>
+        <a class="button button-primary" href="https://www.instagram.com/papaya_ryders/" target="_blank" rel="noopener">Follow on Instagram ↗</a>
+      </div>
+
+      <div class="past-shows reveal">
+        <p class="kicker">PAST HIGHLIGHTS & HISTORY</p>
+        <ul class="past-list">
+          <li><span>2026</span> Hafenzwitschern — Klagenfurt | Biedersteiner Atriumfasching — Munich</li>
+          <li><span>2025</span> Treibhaus — Innsbruck | Uni-Sommerfest (LMU) — Munich | Bahnwärter Thiel — Munich | EAWAG Winter Party — Zurich </li>
+          <li><span>2024</span> StuStaCulum — Munich | Krachparade — Munich</li>
+          <li><span>2023</span> TUNix Festival — Munich</li>
+          <li><span>2022</span> StuStaCulum — Munich</li>
+          <li><span>2021</span> EWH StuSta Party — Munich | GLH Sommerfest — Munich</li>
+          <li><span>2020</span> Biedersteiner Atriumfasching — Munich</li>
+          <li><span>2019</span> First Gigs in Munich (Kade, Red House, GLH, Crazy Villa, MCQST Xmas Party, Sternenflotte @ Alte Utting, ...) 
+          <li><span>2018</span> Papaya Ryders formed @ Studentenstadt — Munich 
+        </ul>
       </div>
     </section>
 
@@ -139,19 +163,19 @@
       <div class="cta-inner reveal">
         <p class="kicker">BOOKING / PRESS</p>
         <h2>Let's make<br>some noise.</h2>
-        <a class="button button-primary" href="mailto:booking@papayaryders.com">Get in touch ↗</a>
+        <a class="button button-primary" href="mailto:papayaryders@gmail.com">Get in touch ↗</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <a class="brand footer-brand" href="#top">PAPAYA RYDERS</a>
-    <div class="socials">
-      <a href="#">Instagram</a>
-      <a href="#">Spotify</a>
-      <a href="#">YouTube</a>
-      <a href="#">TikTok</a>
-    </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/papaya_ryders/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://open.spotify.com/intl-de/artist/6li5xlnYckfpCTUu9VcIGZ?si=tHlqAm4nSLOecpN7BYB3zA" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://www.youtube.com/channel/UCgodLTPbJRze_vL4EjdujCg" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://music.apple.com/us/artist/papaya-ryders/1745280372" target="_blank" rel="noopener">iTunes</a>
+      </div>
     <p>© <span id="year"></span> Papaya Ryders. All rights reserved.</p>
   </footer>
 

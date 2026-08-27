@@ -15,21 +15,37 @@ document.querySelectorAll(".main-nav a").forEach(link => {
   });
 });
 
-document.querySelectorAll(".play-button").forEach(button => {
-  button.addEventListener("click", () => {
-    const playing = button.classList.toggle("is-playing");
-    button.textContent = playing ? "Ⅱ" : "▶";
-    button.setAttribute("aria-label", playing ? "Pause track" : "Play track");
+const audio = document.getElementById("audio-player");
+const playButtons = Array.from(document.querySelectorAll(".play-button"));
+let activeButton = null;
 
-    // Replace this demo interaction with a real <audio> element or
-    // a Spotify/YouTube/Bandcamp link when the band's tracks are available.
-    showToast(
-      playing
-        ? `Demo player: ${button.dataset.track}`
-        : "Playback paused"
-    );
+function syncButtons() {
+  playButtons.forEach(b => {
+    const playing = b === activeButton && !audio.paused;
+    b.classList.toggle("is-playing", playing);
+    b.textContent = playing ? "❚❚" : "▶";
+    b.setAttribute("aria-label", (playing ? "Pause " : "Play ") + b.dataset.track);
   });
-});
+}
+
+if (audio) {
+  playButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      if (activeButton === button) {
+        if (audio.paused) audio.play();
+        else audio.pause();
+        return;
+      }
+      activeButton = button;
+      audio.src = button.closest(".track").dataset.src;
+      audio.play().catch(() => {});
+    });
+  });
+
+  audio.addEventListener("play", syncButtons);
+  audio.addEventListener("pause", syncButtons);
+  audio.addEventListener("ended", () => { activeButton = null; syncButtons(); });
+}
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

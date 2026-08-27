@@ -78,11 +78,10 @@ button { font: inherit; }
 .hero-image {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(255,120,0,.55), transparent 18%),
-    radial-gradient(circle at 14% 30%, rgba(0,100,70,.45), transparent 9%),
-    radial-gradient(circle at 84% 30%, rgba(0,100,70,.4), transparent 9%),
-    linear-gradient(125deg, #23130e 0%, #5c2410 46%, #24110c 100%);
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
   transform: scale(1.04);
 }
 .hero-image::after {
@@ -90,7 +89,7 @@ button { font: inherit; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.3), transparent 35%, rgba(0,0,0,.3)),
+    linear-gradient(90deg, rgba(0,0,0,.32), transparent 38%, rgba(0,0,0,.32)),
     repeating-linear-gradient(0deg, transparent 0 7px, rgba(255,255,255,.012) 8px);
 }
 .hero-overlay {
@@ -184,7 +183,7 @@ h2 {
   letter-spacing: .08em;
 }
 .music { background: var(--bg-soft); max-width: none; padding-left: max(24px, calc((100vw - var(--max)) / 2 + 64px)); padding-right: max(24px, calc((100vw - var(--max)) / 2 + 64px)); }
-.music-heading, .tour-heading { padding-top: 65px; margin-bottom: 52px; }
+.music-heading, .tour-heading, .watch-heading { padding-top: 65px; margin-bottom: 52px; }
 .tracks { border-top: 1px solid var(--line); }
 .track {
   display: grid;
@@ -210,6 +209,20 @@ h2 {
 .track h3 { margin: 0 0 3px; font-size: 22px; }
 .track p { margin: 0; color: var(--muted); font-size: 14px; }
 .track-link { color: var(--orange); font-size: 26px; }
+.track-link:hover { transform: translate(2px, -2px); display: inline-block; }
+.spotify-embed { margin-top: 42px; }
+.spotify-embed iframe { display: block; width: 100%; }
+.video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #000;
+}
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-fallback { margin: 22px 0 0; }
 .streaming-links {
   display: flex;
   flex-wrap: wrap;
@@ -246,6 +259,26 @@ h2 {
 }
 .date-button:hover { background: var(--orange); color: var(--bg); }
 .date-button.disabled { color: #665b54; border-color: #443b36; pointer-events: none; }
+.tour-note { max-width: 640px; color: var(--muted); font-size: 18px; }
+.tour-note p { margin: 0 0 26px; }
+.past-shows { margin-top: 70px; border-top: 1px solid var(--line); padding-top: 34px; }
+.past-list { list-style: none; margin: 22px 0 0; padding: 0; }
+.past-list li {
+  display: flex;
+  gap: 24px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: #ddd2c8;
+  font-size: 18px;
+}
+.past-list li span {
+  font-family: "Barlow Condensed", sans-serif;
+  color: var(--orange);
+  letter-spacing: .06em;
+  min-width: 56px;
+  font-size: 19px;
+}
 
 .cta-section {
   min-height: 610px;
@@ -314,7 +347,7 @@ h2 {
   .section { padding-top: 90px; padding-bottom: 90px; }
   .two-col { grid-template-columns: 1fr; gap: 48px; }
   .music { padding-left: 24px; padding-right: 24px; }
-  .track { grid-template-columns: 58px 1fr 20px; gap: 14px; }
+  .track { grid-template-columns: 58px 1fr 22px; gap: 14px; }
   .play-button { width: 48px; height: 48px; }
   .track-meta { gap: 15px; }
   .track h3 { font-size: 18px; }
