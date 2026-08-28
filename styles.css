@@ -145,11 +145,11 @@ button { font: inherit; }
 /* 7 slides × 7s per slot (49s cycle): each slide fades in over ~2.8s, holds
    ~4.2s, and is dissolved by the next slide's fade-in which overlaps exactly */
 @keyframes hero-xfade {
-  0%     { opacity: 0; transform: scale(1.1); }
-  5.7%   { opacity: 1; }
-  20%    { opacity: 1; transform: scale(1); }
-  25.7%  { opacity: 0; transform: scale(1); }
-  100%   { opacity: 0; transform: scale(1.1); }
+  0%       { opacity: 0; transform: scale(1.1); }
+  5.7%     { opacity: 1; }
+  14.285%  { opacity: 1; transform: scale(1.05); } /* Holds full opacity until next slide starts fading in at 7s */
+  20%      { opacity: 0; transform: scale(1); }    /* Fades out as the next slide takes over */
+  100%     { opacity: 0; transform: scale(1.1); }
 }
 .hero-image::after {
   content: "";
