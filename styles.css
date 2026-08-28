@@ -142,8 +142,8 @@ button { font: inherit; }
 .hero-slide:nth-child(5) { animation-delay: 28s; }
 .hero-slide:nth-child(6) { animation-delay: 35s; }
 .hero-slide:nth-child(7) { animation-delay: 42s; }
-/* each slide: 2s crossfade in, 5s hold, 2s crossfade out — the fade-out of one
-   slide overlaps exactly with the fade-in of the next, blending them together */
+/* 7 slides × 7s per slot (49s cycle): each slide fades in over ~2.8s, holds
+   ~4.2s, and is dissolved by the next slide's fade-in which overlaps exactly */
 @keyframes hero-xfade {
   0%     { opacity: 0; transform: scale(1.1); }
   5.7%   { opacity: 1; }
