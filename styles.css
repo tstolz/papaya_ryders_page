@@ -134,13 +134,14 @@ button { font: inherit; }
   background-repeat: no-repeat;
   opacity: 0;
   will-change: opacity, transform;
-  animation: hero-xfade 42s linear infinite both;
+  animation: hero-xfade 49s linear infinite both;
 }
 .hero-slide:nth-child(2) { animation-delay: 7s; }
 .hero-slide:nth-child(3) { animation-delay: 14s; }
 .hero-slide:nth-child(4) { animation-delay: 21s; }
 .hero-slide:nth-child(5) { animation-delay: 28s; }
 .hero-slide:nth-child(6) { animation-delay: 35s; }
+.hero-slide:nth-child(7) { animation-delay: 42s; }
 /* each slide: 2s crossfade in, 5s hold, 2s crossfade out — the fade-out of one
    slide overlaps exactly with the fade-in of the next, blending them together */
 @keyframes hero-xfade {
