@@ -7,7 +7,7 @@ A responsive, dependency-light single-page site for Papaya Ryders.
 - `index.html` — page structure and content
 - `styles.css` — visual design and responsive layout
 - `script.js` — mobile menu, reveal animations, audio player
-- `hero.jpg` — hero background photo
+- `hero/` — band member photos used for the crossfading hero background
 - `tracks/` — streamed MP3 previews
 - `pictures/` — band photo archive (not currently used on the page)
 
