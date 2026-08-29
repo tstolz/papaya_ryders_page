@@ -136,6 +136,15 @@ button { font: inherit; }
   will-change: opacity, transform;
   animation: hero-xfade 49s linear infinite both;
 }
+
+.hero-slide:not(.is-loaded) {
+  visibility: hidden;
+}
+
+.hero-slide.is-loaded {
+  visibility: visible;
+}
+
 .hero-slide:nth-child(2) { animation-delay: 7s; }
 .hero-slide:nth-child(3) { animation-delay: 14s; }
 .hero-slide:nth-child(4) { animation-delay: 21s; }
@@ -457,6 +466,13 @@ h2 {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-slide { animation: none; opacity: 0; }
-  .hero-slide:first-child { opacity: 1; }
+
+  .hero-slide {
+    animation: none;
+    opacity: 0;
+  }
+
+  .hero-slide:first-child {
+    opacity: 1;
+  }
 }
