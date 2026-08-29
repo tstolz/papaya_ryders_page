@@ -17,6 +17,57 @@ document.querySelectorAll(".main-nav a").forEach(link => {
   });
 });
 
+// Hero image loading
+const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+
+const heroImages = [
+  "hero/luke1_orange.jpg",
+  "hero/tom2_orange.jpg",
+  "hero/lucy4_orange.jpg",
+  "hero/jonas3_orange.jpg",
+  "hero/thomas1_orange.jpg",
+  "hero/domi2_orange.jpg",
+  "hero/andy1_orange.jpg"
+];
+
+const HERO_SLOT_MS = 7000;
+const HERO_PRELOAD_LEAD_MS = 3000;
+const loadedHeroImages = new Set();
+
+function loadHeroImage(index) {
+  if (index < 0 || index >= heroImages.length) return;
+  if (loadedHeroImages.has(index)) return;
+
+  const image = new Image();
+
+  image.onload = () => {
+    loadedHeroImages.add(index);
+
+    const slide = heroSlides[index];
+    if (!slide) return;
+
+    slide.style.backgroundImage = `url("${heroImages[index]}")`;
+    slide.classList.add("is-loaded");
+  };
+
+  image.src = heroImages[index];
+}
+
+// First image: load immediately.
+loadHeroImage(0);
+
+// Subsequent images: request them shortly before they are needed.
+heroImages.forEach((_, index) => {
+  if (index === 0) return;
+
+  const delay = Math.max(
+    1000,
+    index * HERO_SLOT_MS - HERO_PRELOAD_LEAD_MS
+  );
+
+  window.setTimeout(() => loadHeroImage(index), delay);
+});
+
 const audio = document.getElementById("audio-player");
 const playButtons = Array.from(document.querySelectorAll(".play-button"));
 let activeButton = null;
